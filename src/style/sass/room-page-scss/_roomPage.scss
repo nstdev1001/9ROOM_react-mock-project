@@ -1,0 +1,291 @@
+@import "../variable";
+#container-roomPage {
+  margin-top: 65px;
+
+  .hotel-name {
+    font-size: 30px;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  @keyframes kfr-filled {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes kfr-celebrate {
+    0% {
+      transform: scale(0);
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .room-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .room-info {
+    width: 100%;
+  }
+
+  .room-details-btn {
+    width: 100%;
+    // bottom: 0px;
+    button {
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+    }
+
+    button {
+      --primary-color: #005e69;
+      --hovered-color: #003c43;
+      font-weight: 600;
+      font-size: 16px;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    button::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      left: 0;
+      bottom: -7px;
+      background: var(--hovered-color);
+      height: 2px;
+      transition: 0.3s ease-out;
+    }
+
+    button p::before {
+      position: absolute;
+      width: 0%;
+      inset: 0;
+      color: var(--hovered-color);
+      overflow: hidden;
+      transition: 0.3s ease-out;
+    }
+
+    button:hover::after {
+      width: 100%;
+    }
+
+    button:hover p::before {
+      width: 100%;
+    }
+
+    button:hover svg {
+      transform: translateX(4px);
+      color: var(--hovered-color);
+    }
+
+    button svg {
+      color: var(--primary-color);
+      transition: 0.2s;
+      position: relative;
+      width: 15px;
+      transition-delay: 0.2s;
+    }
+  }
+
+  .img-list-wrapper {
+    .image-gallery-slides {
+      border-radius: 10px;
+    }
+
+    .image-gallery-image {
+      object-fit: cover;
+      max-height: 500px;
+      box-shadow: $primary-light-shadow;
+    }
+    .image-gallery-left-nav {
+      background-color: #135d66;
+      opacity: 0.5;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      top: 50%;
+      left: -25px;
+      transform: translateY(-50%);
+      margin: 0;
+      padding: 0;
+      &:hover {
+        background-color: #135d66;
+        opacity: 1;
+        .fa-solid {
+          color: white;
+        }
+      }
+
+      .fa-solid {
+        font-size: 20px;
+      }
+    }
+
+    .image-gallery-right-nav {
+      background-color: #135d66;
+      opacity: 0.5;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      top: 50%;
+      right: -25px;
+      transform: translateY(-50%);
+      margin: 0;
+      padding: 0;
+      &:hover {
+        background-color: #135d66;
+        opacity: 1;
+        .fa-solid {
+          color: white;
+        }
+      }
+
+      .fa-solid {
+        font-size: 20px;
+      }
+    }
+
+    .image-gallery-thumbnail-image {
+      height: 62px;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: $primary-light-shadow;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .room-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(164, 164, 164);
+
+    .custom-gallery-container {
+      width: auto;
+      height: 200px;
+    }
+
+    .image-gallery-slides {
+      border-radius: 10px;
+    }
+    .image-gallery-image {
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .image-gallery-bullet {
+      padding: 2px;
+    }
+  }
+
+  #nonEditableBar {
+    width: 300px;
+    height: 6px;
+    background-color: #ccc;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  #progressBar {
+    height: 100%;
+    border-radius: 8px;
+    background-color: #ff6400;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .rate-name {
+    width: 100px;
+  }
+
+  .bookroom-wrapper {
+    .booking_btn {
+      padding: 8px 24px;
+      font-size: 16px;
+      background-color: #003c43;
+      cursor: pointer;
+      color: white;
+      opacity: 0.8;
+      transition: all 0.25s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav-info.sticky-top {
+    top: 60px;
+    background-color: white;
+  }
+  .fa-map {
+    color: #003c43;
+  }
+
+  .fa-star {
+    color: #faaf00;
+    font-size: large;
+  }
+
+  .custom-review {
+    font-size: 35px;
+  }
+
+  @media (max-width: 700px) {
+    .room-details-btn {
+      button {
+        justify-content: end;
+      }
+    }
+  }
+}
+.room-details {
+  .custom-gallery-container {
+    width: auto;
+    height: 450px;
+  }
+
+  .image-gallery-slides {
+    border-radius: 10px;
+  }
+  .image-gallery-image {
+    object-fit: cover;
+    height: 450px;
+  }
+
+  .image-gallery-bullet {
+    padding: 2px;
+  }
+  .booking_btn {
+    padding: 8px 24px;
+    font-size: 16px;
+    background-color: #003c43;
+    cursor: pointer;
+    color: white;
+    opacity: 0.8;
+    transition: all 0.25s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

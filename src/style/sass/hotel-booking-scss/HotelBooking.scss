@@ -1,0 +1,45 @@
+#hotel-booking {
+  margin-top: 100px;
+
+  #header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  #order {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+
+  .date {
+    border: none;
+    border: 0.2em solid #e91e63;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 2em;
+    color: #e91e63;
+  }
+
+  .MuiInputBase-root {
+    height: 40px;
+    width: 200px;
+    border: none;
+    border: 0.2em solid #e91e63;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2em;
+    color: #e91e63;
+  }
+
+  .pickTimeBtn {
+    background-color: #e91e63;
+    color: whitesmoke;
+  }
+}
