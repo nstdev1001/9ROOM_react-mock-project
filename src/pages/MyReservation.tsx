@@ -41,8 +41,9 @@ const MyReservation = () => {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await CheckoutHotelService.deleteCheckoutHotel(id);
-      // console.log("Delete successful", response);
+      await CheckoutHotelService.deleteCheckoutHotel(id);
+
+      // No need to access response here as it's not used
     } catch (error) {
       console.error("Error deleting hotel", error);
     }
