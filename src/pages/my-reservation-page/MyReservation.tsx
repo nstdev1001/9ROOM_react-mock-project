@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../app/store";
+import { RootState } from "../../app/store";
 import { useNavigate } from "react-router-dom";
-import { cancelRoom } from "../reducers/HotelsSlice";
-import { BookRoomProps } from "./room-page/RoomPage";
+import { cancelRoom } from "../../reducers/HotelsSlice";
+import { BookRoomProps } from "../room-page/RoomPage";
 import Swal from "sweetalert2";
 import noResultImage from "../../public/images/No_result_img.gif";
-import CheckoutHotelService from "../sever-interaction/CheckoutHotelService";
+import CheckoutHotelService from "../../sever-interaction/CheckoutHotelService";
 import { Button } from "@mui/material";
 
 const MyReservation = () => {

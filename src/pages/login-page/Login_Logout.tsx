@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import "../style/sass/_signup_sign_in.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "./log-firebase/Firebase";
+import { auth, db } from "../log-firebase/Firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import LoadingButton from "@mui/lab/LoadingButton";
