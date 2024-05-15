@@ -45,7 +45,7 @@ const Carousel_RoomPage_Img: React.FC<Props> = ({
     );
   };
 
-  console.log("component re-render");
+  // console.log("component re-render");
 
   return (
     <div className="custom-gallery-container mx-auto">
