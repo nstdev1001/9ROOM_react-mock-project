@@ -8,7 +8,7 @@ const CheckoutHotelService = {
 
       return response.data;
     } catch (error) {
-      // console.error("Error in postproduct", error);
+      console.error("Error in postproduct", error);
       throw error;
     }
   },
@@ -21,7 +21,7 @@ const CheckoutHotelService = {
 
       return response.data;
     } catch (error) {
-      // console.error("Error in deleteproduct", error);
+      console.error("Error in deleteproduct", error);
       throw error;
     }
   },

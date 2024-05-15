@@ -30,6 +30,7 @@ const Carousel_RoomPage_Img: React.FC<Props> = ({
       </button>
     );
   };
+
   const renderCustomReviousButton = (
     onClick: React.MouseEventHandler<HTMLButtonElement> | undefined
   ) => {

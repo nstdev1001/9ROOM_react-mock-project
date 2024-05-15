@@ -5,25 +5,25 @@ const hotelCollection = [
     id: 1,
     title: "9ROOM - NiceRoom",
     sub: "Những căn phòng đặc biệt nhất dành cho Roomer",
-    thumbnail: "/images/9ROOM Room.jpg",
+    thumbnail: "./public/images/9ROOM Room.jpg",
   },
   {
     id: 2,
     title: "Tình yêu",
     sub: "Hơn 300 khách sạn kèm nhiều ưu đãi cho các cặp đôi",
-    thumbnail: "/images/Tình yêu.jpg",
+    thumbnail: "./public/images/Tình yêu.jpg",
   },
   {
     id: 3,
     title: "Du lịch",
     sub: "Khám phá những vùng đất mới, tận hưởng với từng chuyến đi",
-    thumbnail: "/images/Du lịch.jpg",
+    thumbnail: "./public/images/Du lịch.jpg",
   },
   {
     id: 4,
     title: "Sang trọng",
     sub: "Trải nghiệm không gian đẳng cấp tại khách sạn 5*",
-    thumbnail: "/images/Sang trọng.jpg",
+    thumbnail: "./public/images/Sang trọng.jpg",
   },
 ];
 

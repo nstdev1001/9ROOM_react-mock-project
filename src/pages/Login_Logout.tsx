@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import "../style/sass/_signup_sign_in.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../log-firebase/Firebase";
+import { auth, db } from "./log-firebase/Firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -55,12 +55,10 @@ const Login_Logout = () => {
 
   const handleRegister = async (value: FormValues) => {
     setIsButtonDisabled(true); // Disable the button on click
-    // console.log(value);
 
     try {
       await createUserWithEmailAndPassword(auth, value.email, value.password);
       const user = auth.currentUser;
-      // console.log(user);
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
@@ -97,7 +95,7 @@ const Login_Logout = () => {
         errors.passwordConfirm = "Mật khẩu xác nhận phải giống với mật khẩu";
       }
     }
-    // console.log(errors);
+    console.log(errors);
 
     return errors;
   };

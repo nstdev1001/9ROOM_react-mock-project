@@ -3,14 +3,14 @@ import "./App.css";
 import HotelListPage from "./pages/hotel-list-page/HotelListPage";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
-import Login_Logout from "./pages/login-page/Login_Logout";
+import Login_Logout from "./pages/Login_Logout";
 import NavBar from "./components/NavBar";
 import { ToastContainer } from "react-toastify";
-import PromotionList from "./pages/vouchers-page/PromotionList";
+import PromotionList from "./pages/PromotionList";
 import { auth } from "./pages/log-firebase/Firebase";
 import RoomPage from "./pages/room-page/RoomPage";
 import { Fragment, useEffect, useState } from "react";
-import MyReservation from "./pages/my-reservation-page/MyReservation";
+import MyReservation from "./pages/MyReservation";
 import HotelBooking from "./pages/hotel-booking/HotelBooking";
 
 function App() {
