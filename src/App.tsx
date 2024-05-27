@@ -26,6 +26,7 @@ function App() {
       <ToastContainer />
       <NavBar />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/discount" element={<PromotionList />} />
