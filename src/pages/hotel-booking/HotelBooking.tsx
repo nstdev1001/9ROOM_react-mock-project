@@ -25,6 +25,7 @@ import { Button } from "@mui/material";
 import Swal from "sweetalert2";
 
 const style = {
+  // eslint-disable-next-line @typescript-eslint/prefer-as-const
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",

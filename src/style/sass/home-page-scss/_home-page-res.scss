@@ -1,0 +1,10 @@
+.banner-res {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .banner-res {
+    margin-top: 150px;
+  }
+}

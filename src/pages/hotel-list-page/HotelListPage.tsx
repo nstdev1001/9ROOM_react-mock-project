@@ -94,7 +94,7 @@ const getHotelsResult = (allData: Hotel[], queryParams: QueryParams) => {
   return hotelResult;
 };
 
-const HotelListPage: React.FC<Hotel | {}> = () => {
+const HotelListPage: React.FC<Hotel | object> = () => {
   const navigate = useNavigate();
   const [hotelList, setHotelList] = useState<Hotel[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();

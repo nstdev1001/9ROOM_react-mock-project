@@ -19,6 +19,8 @@ import CitiesServices from "../sever-interaction/CitiesServices";
 import DistrictsServices from "../sever-interaction/DistrictsServices";
 import { doc, getDoc } from "firebase/firestore";
 import HotelCollectionServices from "../sever-interaction/HotelCollectionServices";
+// import { getUserProfile } from "../pages/log-firebase/firestore";
+// import { subscribeToAuthChanges } from "../pages/log-firebase/auth";
 
 export interface Hotel {
   sn: number;
@@ -37,7 +39,7 @@ interface District {
 }
 
 const style = {
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "5%",
   left: "50%",
   transform: "translate(-50%, -50%)",
@@ -58,6 +60,7 @@ const NavBar = () => {
   const [openModal, setOpenModal] = React.useState(false);
   const [hotelList, setHotelList] = useState<Hotel[]>([]);
   const [open, setOpen] = React.useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>({});
 
   useEffect(() => {
@@ -235,33 +238,63 @@ const NavBar = () => {
 
   fetchUserData();
 
+  // useEffect(() => {
+  //   const unsubscribe = subscribeToAuthChanges(async (user: { uid: any }) => {
+  //     if (user) {
+  //       const userDocSnap = await getUserProfile(user.uid);
+  //       if (userDocSnap.exists()) {
+  //         const userData = userDocSnap.data();
+  //         setFirstName(userData.firstName);
+  //         setLastName(userData.lastName);
+  //         setEmail(userData.email);
+  //       } else {
+  //         console.log("No such document!");
+  //       }
+  //     }
+  //   });
+
+  //   return () => unsubscribe();
+  // }, []);
+
   const DrawerList = (
     <Box sx={{ width: 350 }} role="presentation" onClick={toggleDrawer(false)}>
       <List sx={{ marginLeft: "5px" }}>
-        <ListItem>
-          <div
-            className="rounded-circle text-white d-flex align-items-center justify-content-center mr-2"
-            style={{
-              width: "35px",
-              height: "35px",
-              backgroundColor: "#003c43",
-            }}
-          >
-            {firstName.charAt(0).toUpperCase()}
-          </div>
-        </ListItem>
+        {user ? (
+          <div className="hello-user-logged-in">
+            <ListItem>
+              <div
+                className="rounded-circle text-white d-flex align-items-center justify-content-center mr-2"
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  backgroundColor: "#003c43",
+                }}
+              >
+                {firstName.charAt(0).toUpperCase()}
+              </div>
+            </ListItem>
 
-        <ListItem>
-          <div>
-            <h6>
-              Xin chào{" "}
-              <strong>
-                {firstName} {lastName}
-              </strong>
-            </h6>
-            <span>{email}</span>
+            <ListItem>
+              <div>
+                <h6>
+                  Xin chào{" "}
+                  <strong>
+                    {firstName} {lastName}
+                  </strong>
+                </h6>
+                <span>{email}</span>
+              </div>
+            </ListItem>
           </div>
-        </ListItem>
+        ) : (
+          <div className="hello-user">
+            <ListItem>
+              <h6>
+                <a href="/login_logout">Đăng nhập / đăng ký</a>
+              </h6>
+            </ListItem>
+          </div>
+        )}
 
         <ListItem sx={{ marginTop: "10px", color: "#003c43" }}>
           <i className="fa-solid fa-circle-user mr-2"></i>
@@ -280,12 +313,19 @@ const NavBar = () => {
           <span>Danh sách yêu thích</span>
         </ListItem>
 
-        <Link to="/login">
-          <ListItem sx={{ color: "#003c43", fontWeight: "bold" }}>
-            <i className="fa-solid fa-arrow-right-from-bracket mr-2"></i>
-            <span>Đăng xuất</span>
-          </ListItem>
-        </Link>
+        {user ? (
+          <Link to="/login">
+            <ListItem
+              sx={{ color: "#003c43", fontWeight: "bold" }}
+              onClick={handleLogout}
+            >
+              <i className="fa-solid fa-arrow-right-from-bracket mr-2"></i>
+              <span>Đăng xuất</span>
+            </ListItem>
+          </Link>
+        ) : (
+          <div></div>
+        )}
       </List>
       <Divider />
       <List sx={{ marginLeft: "5px" }}>
