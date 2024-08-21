@@ -1,4 +1,2 @@
-New Terminal: npm install <br>
-New Terminal: npm run server <br>
-New Terminal: npm run dev <br>
+a React app mock project
 ![Logo](./public/images/project-img.PNG)
